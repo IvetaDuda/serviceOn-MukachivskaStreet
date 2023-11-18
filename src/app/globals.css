@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Jost:ital,wght@0,200;0,400;0,500;0,700;1,100;1,400&family=Dancing+Script&family=Inter+Tight&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Marck+Script&display=swap');
+
+:root {
+  /* --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace; */
+  --color_bg: #000;
+  --min_width: '300px';
+  --text_color: white;
+  --text_shadow: 0px 1px 2px black;
+  --border_semi_white: rgba(255, 255, 255, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition-duration: 0.5s;
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Викликає скрол при відкритій модалці */
+  font-family: 'Jost';
+}
+
+body {
+  /* position: relative; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text_color);
+
+  /* font-family: Inter; */
+}
+
+main {
+  /* flex: 1; */
+  overflow-x: hidden;
+}
+
+section {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  padding: 32px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    padding: 32px;
+  }
+}
+
+.textLinkAnimation {
+  text-decoration: none;
+  position: relative;
+  outline: none;
+}
+
+.textLinkAnimation:hover.textLinkAnimation::after,
+.textLinkAnimation:focus.textLinkAnimation::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  animation: textLink 0.8s ease forwards;
+  background-color: #ffffff;
+}
+@keyframes textLink {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100%;
+  }
+}
